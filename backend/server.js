@@ -18,10 +18,12 @@ mongoose.connect("mongodb+srv://safwannazir911:Lexuslfa12345@cluster0.roxmicn.mo
 
 // Use CORS middleware to allow requests from a specific origin (port 3000)
 app.use(cors({
-  origin: '*',
+  origin: 'https://wazirone-assignment-frontend-rjwjeakxi-safwannazir911s-projects.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
+  allowedHeaders: 'Content-Type,Authorization',
 }));
+
 
 
 
