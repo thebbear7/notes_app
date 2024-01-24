@@ -22,7 +22,7 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch notes from the mock API (JSONPlaceholder)
-    axios.get(`http://localhost:3000/api/notes`)
+    axios.get(`https://wazirone-assignment-fph1zh97h-safwannazir911s-projects.vercel.app/api/notes`)
       .then(response => {
         setNotes(response.data);
       })
@@ -66,7 +66,7 @@ const Home = () => {
     // Handle save changes (Edit or Add) here
     if (editNote) {
       // Implement update/edit functionality
-      axios.put(`http://localhost:3000/api/notes/${editNote._id}`, formData)
+      axios.put(`https://wazirone-assignment-fph1zh97h-safwannazir911s-projects.vercel.app/api/notes/${editNote._id}`, formData)
         .then(() => {
           // Reset state and close the modal
           handleModalToggle();
@@ -85,7 +85,7 @@ const Home = () => {
         );
     } else {
       // Implement add functionality
-      axios.post('http://localhost:3000/api/notes', formData)
+      axios.post('https://wazirone-assignment-fph1zh97h-safwannazir911s-projects.vercel.app/api/notes', formData)
         .then(() => {
           // Reset state and close the modal
           // Set success message
@@ -106,7 +106,7 @@ const Home = () => {
 
   const handlePin = (note) => {
     // Toggle the pinned status of the note
-    axios.put(`http://localhost:3000/api/notes/${note._id}`, {
+    axios.put(`https://wazirone-assignment-fph1zh97h-safwannazir911s-projects.vercel.app/api/notes/${note._id}`, {
       pinned: !note.pinned,
     })
       .then(response => {
@@ -119,7 +119,7 @@ const Home = () => {
 
   const handleDelete = (noteId) => {
     // Implement delete functionality
-    axios.delete(`http://localhost:3000/api/notes/${noteId}`)
+    axios.delete(`https://wazirone-assignment-fph1zh97h-safwannazir911s-projects.vercel.app/api/notes/${noteId}`)
       .then(() => {
 
       })
