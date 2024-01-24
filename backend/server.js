@@ -11,7 +11,7 @@ dotenv.config();
 
 app.use(express.urlencoded({ limit: "10mb", extended: true }));
 app.use(express.json({ limit: "10mb" }))
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect("mongodb+srv://safwannazir911:Lexuslfa12345@cluster0.roxmicn.mongodb.net/WazironeDB")
   .then(() => console.log("Database Connected"))
   .catch(err => console.log(err));
 
@@ -22,7 +22,9 @@ app.use(cors());
 
 app.use('/api', notesRouter);
 
-
+app.get('/', (req,res) => {
+  res.json("Hello")
+})
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
