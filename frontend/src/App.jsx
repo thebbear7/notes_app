@@ -1,10 +1,12 @@
 import React from "react"
+import  Home  from "./screens/Home"
+
 
 function App() {
 
   return (
     <>
-     <h1>hellos</h1>
+      <Home />
     </>
   )
 }

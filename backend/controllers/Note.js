@@ -13,6 +13,7 @@ const controllers = {
     createNote:async (req, res) => {
         try {
           const newNote = await Note.create(req.body);
+          console.log(req.body)
           res.status(200).json(newNote);
         } catch (error) {
           console.error(error);
