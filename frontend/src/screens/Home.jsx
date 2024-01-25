@@ -81,6 +81,7 @@ const Home = () => {
         }).finally(
           () => {
             setTimeout(() => setMessage(null), 6000);
+           
           }
         );
     } else {
@@ -90,6 +91,7 @@ const Home = () => {
           // Reset state and close the modal
           // Set success message
           setMessage('Note added successfully!');
+          
         })
         .catch((error) => {
           // Handle error
@@ -99,6 +101,12 @@ const Home = () => {
         }).finally(
           () => {
             setTimeout(() => setMessage(null), 6000);
+            setFormData({
+              title: '',
+              tagline: '',
+              body: '',
+            });
+            handleAddNote()
           }
         );
     }
