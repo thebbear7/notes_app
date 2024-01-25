@@ -101,11 +101,6 @@ const Home = () => {
         }).finally(
           () => {
             setTimeout(() => setMessage(null), 6000);
-            setFormData({
-              title: '',
-              tagline: '',
-              body: '',
-            });
             handleAddNote()
           }
         );
