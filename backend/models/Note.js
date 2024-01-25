@@ -1,9 +1,18 @@
 import mongoose from "mongoose";
 
 const noteSchema = new mongoose.Schema({
-    title: String,
-    tagline: String,
-    body: String,
+    title: {
+        type: String,
+        required: true
+    },
+    tagline: {
+        type: String,
+        required: true
+    },
+    body: {
+        type: String,
+        required: true
+    },
     pinned: {
         type: Boolean,
         default: false
