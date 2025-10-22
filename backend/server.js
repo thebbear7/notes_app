@@ -11,14 +11,14 @@ dotenv.config();
 
 app.use(express.urlencoded({ limit: "10mb", extended: true }));
 app.use(express.json({ limit: "10mb" }))
-mongoose.connect("mongodb+srv://safwannazir911:Lexuslfa12345@cluster0.roxmicn.mongodb.net/WazironeDB")
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("Database Connected"))
   .catch(err => console.log(err));
 
 
 // Use CORS middleware to allow requests from a specific origin (port 3000)
 app.use(cors({
-  origin: 'https://safwannazir-notetaking.vercel.app',
+  origin: 'http://localhost:8080',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   allowedHeaders: 'Content-Type,Authorization',

@@ -7,6 +7,9 @@ import { CiCirclePlus } from "react-icons/ci";
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 
+const API_URL = "http://localhost:3000/api/notes";
+
+
 const Home = () => {
   const [notes, setNotes] = useState([]);
   const [editNote, setEditNote] = useState(null);
@@ -22,7 +25,7 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch notes from the mock API (JSONPlaceholder)
-    axios.get(`https://wazirone-assignment-api.vercel.app/api/notes`)
+    axios.get(`${API_URL}`)
       .then(response => {
         setNotes(response.data);
       })
@@ -66,7 +69,7 @@ const Home = () => {
     // Handle save changes (Edit or Add) here
     if (editNote) {
       // Implement update/edit functionality
-      axios.put(`https://wazirone-assignment-api.vercel.app/api/notes/${editNote._id}`, formData)
+      axios.put(`${API_URL}/${editNote._id}`, formData)
         .then(() => {
           // Reset state and close the modal
           handleModalToggle();
@@ -86,7 +89,7 @@ const Home = () => {
         );
     } else {
       // Implement add functionality
-      axios.post('https://wazirone-assignment-api.vercel.app/api/notes', formData)
+      axios.post(`${API_URL}`, formData)
         .then(() => {
           // Reset state and close the modal
           // Set success message
@@ -109,7 +112,7 @@ const Home = () => {
 
   const handlePin = (note) => {
     // Toggle the pinned status of the note
-    axios.put(`https://wazirone-assignment-api.vercel.app/api/notes/${note._id}`, {
+    axios.put(`${API_URL}/${note._id}`, {
       pinned: !note.pinned,
     })
       .then(response => {
@@ -122,7 +125,7 @@ const Home = () => {
 
   const handleDelete = (noteId) => {
     // Implement delete functionality
-    axios.delete(`https://wazirone-assignment-api.vercel.app/api/notes/${noteId}`)
+    axios.delete(`${API_URL}/${noteId}`)
       .then(() => {
 
       })
