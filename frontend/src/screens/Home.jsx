@@ -7,7 +7,8 @@ import { CiCirclePlus } from "react-icons/ci";
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 
-const API_URL = "http://localhost:3000/api/notes";
+const API_URL = "http://backend-service:3000/api/notes";
+
 
 
 const Home = () => {

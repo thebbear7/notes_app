@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Use CORS middleware to allow requests from a specific origin (port 3000)
 app.use(cors({
-  origin: 'http://localhost:8080',
+  origin: '*',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   allowedHeaders: 'Content-Type,Authorization',
