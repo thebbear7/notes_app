@@ -18,5 +18,6 @@ spec:
       containers:
       - name: frontend-deployment
         image: mahbeer/notes_app-frontend
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
