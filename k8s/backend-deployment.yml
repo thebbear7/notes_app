@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend-deployment
   namespace: notes-app
-  labels:
+  labels: 
     app: backend-deployment
 spec:
   replicas: 1
@@ -22,4 +22,4 @@ spec:
         - containerPort: 3000
         env:
         - name: MONGODB_URI
-          value: "mongodb+srv://admin:admin123@cluster0.yrzob8j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+          value: "mongodb+srv://admin:admin123@cluster0.yrzob8j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0" #create your own
